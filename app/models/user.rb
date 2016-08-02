@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 
   has_many :user_songs, dependent: :destroy
   has_many :songs, through: :user_songs
+
+  enum role: [:guest, :logged, :admin]
 end

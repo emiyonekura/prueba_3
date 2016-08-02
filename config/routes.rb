@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
 
+  get 'users/index'
+
   get 'songs/index'
 
-  devise_for :users
-  get 'songs/index'
+  devise_for :users, controllers: {
+        sessions: 'users/sessions',
+        registration: 'users/registration'
+      }
+
+
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
